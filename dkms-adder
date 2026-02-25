@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Check if there are any dkms compiled modules and dracut-install int initramfs-tools.
+# The modules have to be copied into the initramfs.
+
+if [ -d "${MODULESDIR}/updates" ]; then
+	hf="/usr/share/initramfs-tools/hook-functions"
+	if [ -f "${hf}" ] && [ $(grep -c 'dracut-install' "${hf}") -ne 0 ]; then
+		. "${hf}"
+		for mod in $(find "${MODULESDIR}/updates" -name '*.ko*'); do
+			if [ ! -f "${DESTDIR}${mod}" ]; then
+				manual_add_modules "${mod}"
+			fi
+		done
+	fi
+fi
