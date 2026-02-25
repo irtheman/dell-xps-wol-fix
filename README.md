@@ -16,17 +16,17 @@ If someone is thinking of using this then please be cautious as my computers are
 If the end result of running **./undo.sh** shows any alx-wol packages then run this...
 ```bash
 sudo rm -rf /var/lib/dkms/alx-wol/3.1
-sudo rm -rf /usr/src/alx-wol-3.1`
+sudo rm -rf /usr/src/alx-wol-3.1
 ```
 
 ### dkms.conf configuration
 
-**PACKAGE_NAME** has to be filled with the name to use in dkms.
-**PACKAGE_VERSION** is the version number of the dkms package.
-**BUILT_MODULE_NAME[0]** is the name of the module to build.
-**BUILT_MODULE_LOCATION[0]** is the path where the module is located after being compiled.
-**DEST_MODULE_NAME[0]** should be the same as BUILT_MODULE_NAME[0].
-**DEST_MODULE_LOCATION[0]** is the location where the original module is located.
+- **PACKAGE_NAME** has to be filled with the name to use in dkms.
+- **PACKAGE_VERSION** is the version number of the dkms package.
+- **BUILT_MODULE_NAME[0]** is the name of the module to build.
+- **BUILT_MODULE_LOCATION[0]** is the path where the module is located after being compiled.
+- **DEST_MODULE_NAME[0]** should be the same as BUILT_MODULE_NAME[0].
+- **DEST_MODULE_LOCATION[0]** is the location where the original module is located.
 
 ### sources.txt
 
